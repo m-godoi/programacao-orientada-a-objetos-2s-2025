@@ -2,15 +2,10 @@ package sistema_radar;
 
 public class Simulacao{
     public static void main(String[] args) {
-        Carro Etios = new Carro();
-        Etios.ano = 2018;
-        Etios.modelo = "lindo";
-        Etios.placa = "PBD3565";
-        Etios.velocidade = 0;
+        Carro Etios = new Carro("PBD3565",0,2018,"sim");
+        
 
-        Radar radar = new Radar();
-        radar.localizacao = "Pistão Sul";
-        radar.LimiteVelocidade = 60;
+        Radar radar = new Radar("Pistão Sul", 60);
 
         radar.avaliarVelocidade(Etios);
 
@@ -21,7 +16,8 @@ public class Simulacao{
         Etios.acelerar();
         Etios.acelerar();
         Etios.acelerar();
-
+        Etios.acelerar();
+        Etios.setVelocidade(-60);
         radar.avaliarVelocidade(Etios);
     }
 }
